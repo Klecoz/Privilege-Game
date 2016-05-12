@@ -37,7 +37,7 @@ var stageCounter = 1;
 //Checks click for some buttons
 //Dem random life events yo
 function randomLifeEvent(stage) {
-    var randomvar = Math.floor((Math.random() * 5) + 1);
+    var randomvar = Math.floor((Math.random() * 8) + 1);
     
     $('.s' + stage).append('<h2 id="random">You encounted a random life event:</h2>');
     switch(randomvar) {
@@ -61,6 +61,19 @@ function randomLifeEvent(stage) {
             $('.s' + stage).append('<p>You identified with a person on TV of the same race as you in a positive way. Privliege +1</p>');
             privilegeCounter++;
             break;
+        case 6:
+            $('.s' + stage).append('<p>You were in an accident and had to get your right arm amputated. Privliege -1</p>');
+            privilegeCounter = privilegeCounter - 1;
+            break;
+        case 7:
+            $('.s' + stage).append('<p>You did not get a job and felt discriminated against either due to gender, race, age, or sexual orientation. Privliege -1</p>');
+            privilegeCounter = privilegeCounter - 1;
+            break;
+        case 8:
+            $('.s' + stage).append('<p>Your family supported you through a tramatic event. Privliege +1</p>');
+            privilegeCounter++;
+            break;
+            
         default:
             break;
     }
@@ -84,6 +97,11 @@ if (person.sexualOrientation === 'Hetrosexual') {
     privilegeCounter++;
 }
 
+
+if (person.sexualOrientation === 'Homosexual') {
+    privilegeCounter--;
+}
+    
 if (person.socialStatus === ('Upper Middle Class' || 'Upper Class')) {
     privilegeCounter++;
 }
@@ -163,8 +181,7 @@ $('.play').click(function() {
    $('.s' + stageCounter).fadeIn(300);
    $('.map').fadeIn(300);
    $('#current').fadeIn(300);
-   $('#points').fadeIn(300);    
-
+   $('#points').fadeIn(300);      
    });
     
 });
@@ -177,6 +194,7 @@ $('.next').click(function() {
    $('#points').empty().append('Privilege Points: ' + (privilegeCounter));
    $('.s' + stageCounter).fadeIn(300);
    $('.map').empty().append('<img src="images/map/map' + stageCounter + '.png" alt="" width="100%">');
+    $('.progress-bar').css('width', '12.5%').empty().append('12.5% Complete'); 
    });
     
 });
@@ -203,6 +221,7 @@ $('#pub').click(function(){
    $('.s3').fadeIn(300);
    $('.map').empty().append('<img src="images/map/map3_1.png" alt="" width="100%">');
    });
+    $('.progress-bar').css('width', '12.5%').empty().append('12.5% Complete'); 
     $('.s3').append('<p>Looks like you chose to go to public school, or had no other choice. Your privilege points have stayed the same.</p>');
 });
 
@@ -216,6 +235,7 @@ $('#pri').click(function(){
    $('.s3').fadeIn(300);
    $('.map').empty().append('<img src="images/map/map3_2.png" alt="" width="100%">');
    });
+    $('.progress-bar').css('width', '25%').empty().append('25% Complete'); 
     $('.s3').append('<p>Looks like you got to go to private school. Lucky you! You have gained a privilege point.</p>');
 });
 
@@ -234,6 +254,7 @@ $('.next2').click(function() {
    $('#points').empty().append('Privilege Points: ' + (privilegeCounter));
    $('.s' + stageCounter).fadeIn(300);
    $('.map').empty().append('<img src="images/map/map' + stageCounter + '.png" alt="" width="100%">');
+    $('.progress-bar').css('width', '37.5%').empty().append('37.5% Complete'); 
    });
     
 });
@@ -250,6 +271,7 @@ if (person.education === 'Less than high school') {
 
 $('.s4').append('<button id="job" type="button" class="btn btn-primary"><h3>Get a Job</h3></button>');
 
+//Stage5
 //If job is picked
 $('#job').click(function(){
   $('.s' + stageCounter).fadeOut(300, function() {
@@ -259,7 +281,11 @@ $('#job').click(function(){
    $('.s' + stageCounter).fadeIn(300);
    $('.map').empty().append('<img src="images/map/map5_2.png" alt="" width="100%">');
    });
+    $('.progress-bar').css('width', '50%').empty().append('50% Complete'); 
   $('.s5').append('<p>College would have been a great start, but you chose to get a job. At least you are not getting into debt.</p>');
+    if (person.gender === 'Woman') {
+        $('.s5').append('<p>Women only make 79 centers for ever dollar erned by men, and you are part of that gender wage gap. Privilege -1</p>');
+    }
 });
 
 //If college is picked
@@ -272,11 +298,141 @@ $('#col').click(function(){
    $('.s' + stageCounter).fadeIn(300);
    $('.map').empty().append('<img src="images/map/map5_1.png" alt="" width="100%">');
    });
+    $('.progress-bar').css('width', '50%').empty().append('50% Complete'); 
  $('.s5').append('<p>Great choice getting an education! You are on your way to getting a great career!</p>');
     if ((person.socialStatus != 'Upper Middle Class') || (person.socialStatus != 'Upper Class')) {
         $('.s5').append('<p>Unfortunally, in order to take this next big step in your career, you needed to take on some debt. Privilege -1</p>');
         privilegeCounter--;
     }
 });
+
+    $('.s5').append('<button type="button" class="next3 btn btn-primary"><h3>Next</h3></button>');
     
+    $('.next3').click(function() {
+   $('.s' + stageCounter).fadeOut(300, function() {
+    stageCounter++;
+   $('#current').empty().append('Current Level: ' + (stageCounter-1));
+   $('#points').empty().append('Privilege Points: ' + (privilegeCounter));
+   $('.s' + stageCounter).fadeIn(300);
+   $('.map').empty().append('<img src="images/map/map' + stageCounter + '.png" alt="" width="100%">');
+   });
+        $('.progress-bar').css('width', '62.5%').empty().append('62.5% Complete'); 
+        });
+    
+//Stage6
+randomLifeEvent(6);
+randomLifeEvent(6);
+$('.s6').append('<p>You made it this far in life just by being the way you are! If you have not noticed your Privilege Points by now, why not take a look?');
+    
+$('.s6').append('<button type="button" class="next4 btn btn-primary"><h3>Next</h3></button>');
+    
+ $('.next4').click(function() {
+   $('.s' + stageCounter).fadeOut(300, function() {
+    stageCounter++;
+   $('#current').empty().append('Current Level: ' + (stageCounter-1));
+   $('#points').empty().append('Privilege Points: ' + (privilegeCounter));
+   $('.s' + stageCounter).fadeIn(300);
+   $('.map').empty().append('<img src="images/map/map' + stageCounter + '.png" alt="" width="100%">');
+   });
+     $('.progress-bar').css('width', '75%').empty().append('75% Complete'); 
+        });
+
+//Stage 7
+    $('.s7').append('You are finally at that stage of life where you would want to buy a home, and maybe even start a family.');
+    if ((person.race === 'Black') ||(person.race === 'Native American') || (person.race === 'Latino'))
+        {
+            $('.s7').append('<p>Unfortunally for you, it has been difficult getting a house in a nice neighborhood. You are being redlined. Privilege -1</p>');
+            privilegeCounter--;
+        }
+    randomLifeEvent(7);
+    
+    $('.s7').append('<button type="button" class="next5 btn btn-primary"><h3>Next</h3></button>');
+    
+     $('.next5').click(function() {
+   $('.s' + stageCounter).fadeOut(300, function() {
+    stageCounter++;
+   $('#current').empty().append('Current Level: ' + (stageCounter-1));
+   $('#points').empty().append('Privilege Points: ' + (privilegeCounter));
+   $('.s' + stageCounter).fadeIn(300);
+   $('.map').empty().append('<img src="images/map/map' + stageCounter + '.png" alt="" width="100%">');
+   });
+         $('.progress-bar').css('width', '87.5%').empty().append('87.5% Complete'); 
+        });
+    
+    $('.s8').append('Life has come and gone. You are in your deathbed, waiting until the end.</p>');
+    if (person.socialStatus === 'Lower Class') {
+        $('.s8').append('<p>Due to your social class, it is unlikely that you will be able to afford your own funural. Privilege -1</p>');
+        privilegeCounter--;
+    }
+    
+    if (person.socialStatus === 'Upper Class') {
+        $('.s8').append('<p>You have enough money to buy a country. And more than enough to give to your bratty kids. Privilege +1</p>');
+        privilegeCounter++;
+    }
+    
+     $('.s8').append('<button type="button" class="next6 btn btn-primary"><h3>Next</h3></button>');
+    
+     $('.next6').click(function() {
+   $('.s' + stageCounter).fadeOut(300, function() {
+    stageCounter++;
+   $('#current').empty().append('Current Level: DONE!');
+   $('#points').empty().append('Privilege Points: ' + (privilegeCounter));
+   $('.s' + stageCounter).fadeIn(300);
+   $('.map').fadeOut(300, function() {
+      $('.end').fadeIn(300); 
+   });
+   });
+         $('.progress-bar').css('width', '100%').empty().append('100% Complete'); 
+        });
+    
+    $('.s9').append('<h2>Great Job!</h2>');
+    $('.s9').append('<p>You successfully simulated the privliege of your individual character!</p>');
+    $('.end').append('<div id="endcharacter"></div>');
+    $('.end').append('<ul><li>Race: ' + person.race + '</li>' + '<li>Gender: ' + person.gender + '</li>' + '<li>Sexual Orientation: ' + person.sexualOrientation + '</li>' + '<li>Social Status: ' + person.socialStatus + '</li>' + '<li>Education: ' + person.education + '</li>' + '<li>' + person.parents + ' parent(s)</li></ul>');
+
+    //Picks character if Male
+if (person.race === 'White' && person.gender === 'Male') {
+    $('#endcharacter').append('<img src="images/people/male1.png" alt="">');
+}
+
+if (person.race === 'Asian' && person.gender === 'Male') {
+    $('#endcharacter').append('<img src="images/people/male1.png" alt="">');
+}
+
+if (person.race === 'Native American' && person.gender === 'Male') {
+    $('#endcharacter').append('<img src="images/people/male2.png" alt="">');
+}
+
+if (person.race === 'Latino' && person.gender === 'Male') {
+    $('#endcharacter').append('<img src="images/people/male2.png" alt="">');
+}
+
+if (person.race === 'Black' && person.gender === 'Male') {
+    $('#endcharacter').append('<img src="images/people/male3.png" alt="">');
+}
+
+//Picks character if female
+
+if (person.race === 'White' && person.gender === 'Female') {
+    $('#endcharacter').append('<img src="images/people/female1.png" alt="">');
+}
+
+if (person.race === 'Asian' && person.gender === 'Female') {
+    $('#endcharacter').append('<img src="images/people/female1.png" alt="">');
+}
+
+if (person.race === 'Native American' && person.gender === 'Female') {
+    $('#endcharacter').append('<img src="images/people/female2.png" alt="">');
+}
+
+if (person.race === 'Latino' && person.gender === 'Female') {
+    $('#endcharacter').append('<img src="images/people/female2.png" alt="">');
+}
+
+if (person.race === 'Black' && person.gender === 'Female') {
+    $('#endcharacter').append('<img src="images/people/female3.png" alt="">');
+}
+
+$('.s9').append('<h3>You managed to score: ' + privilegeCounter + ' Privilege Points.</h2>');
+
 });

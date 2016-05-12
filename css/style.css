@@ -1,9 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Kalam:400,700);
 
-#character {
+#title {
+    font-family: 'Kalam', cursive;
+    text-align: center;
+    font-weight: 700;
+}
+
+p {
+    font-size: 16px;
+}
+#character, #endcharacter {
     text-align: center;
 }
 
-.s1, .s2, .s3, .s4, .s5, .map, #current, #points {
+.s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8, .map, .end, .s9, #current, #points {
     display: none;
 }
 
