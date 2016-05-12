@@ -7,7 +7,7 @@ var sexualOrientation = ['Hetrosexual', 'Bisexual', 'Homosexual'];
 
 var socialStatus = ['Lower Class', 'Working Class', 'Lower Middle', 'Upper Middle', 'Upper Class'];
 
-var education = ['Less than high school', 'High School', 'Some College', 'Associate', 'Bachelor', 'Master', 'Doctor' ];
+var education = ['Less than high school', 'High School', 'Some College', 'Associate Degree', 'Bachelor Degree', 'Master Degree', 'Doctorate' ];
         
 
 
