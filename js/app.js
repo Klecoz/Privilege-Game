@@ -88,6 +88,10 @@ if (person.socialStatus === ('Upper Middle Class' || 'Upper Class')) {
     privilegeCounter++;
 }
 
+if (person.socialStatus === 'Lower Class') {
+    privilegeCounter--;
+}
+
 if (person.education === ('Bachelor' || 'Master' || 'Doctor')) {
     privilegeCounter++;
 }
@@ -241,10 +245,10 @@ if (person.education === 'Less than high school') {
      $('.s4').append('<p>Your parent or parents did not manage to get past high school, and unfortunally you did not either. Privilege -1</p>');
 } else {
      $('.s4').append('<p>Congratulations! You managed to get through High School! What would you like to do now?');
+    $('.s4').append('<button id="col" type="button" class="btn btn-primary"><h3>Go to College</h3></button>');
 }
 
 $('.s4').append('<button id="job" type="button" class="btn btn-primary"><h3>Get a Job</h3></button>');
-$('.s4').append('<button id="col" type="button" class="btn btn-primary"><h3>Go to College</h3></button>');
 
 //If job is picked
 $('#job').click(function(){
@@ -253,8 +257,9 @@ $('#job').click(function(){
    $('#current').empty().append('Current Level: ' + (stageCounter-1));
    $('#points').empty().append('Privilege Points: ' + (privilegeCounter));
    $('.s' + stageCounter).fadeIn(300);
-   $('.map').empty().append('<img src="images/map/map5_1.png" alt="" width="100%">');
+   $('.map').empty().append('<img src="images/map/map5_2.png" alt="" width="100%">');
    });
+  $('.s5').append('<p>College would have been a great start, but you chose to get a job. At least you are not getting into debt.</p>');
 });
 
 //If college is picked
@@ -265,8 +270,13 @@ $('#col').click(function(){
    privilegeCounter++;
    $('#points').empty().append('Privilege Points: ' + privilegeCounter);
    $('.s' + stageCounter).fadeIn(300);
-   $('.map').empty().append('<img src="images/map/map5_2.png" alt="" width="100%">');
+   $('.map').empty().append('<img src="images/map/map5_1.png" alt="" width="100%">');
    });
+ $('.s5').append('<p>Great choice getting an education! You are on your way to getting a great career!</p>');
+    if ((person.socialStatus != 'Upper Middle Class') || (person.socialStatus != 'Upper Class')) {
+        $('.s5').append('<p>Unfortunally, in order to take this next big step in your career, you needed to take on some debt. Privilege -1</p>');
+        privilegeCounter--;
+    }
 });
     
 });
