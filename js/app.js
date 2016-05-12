@@ -1,3 +1,4 @@
+$(document).ready( function() {
 //Data to decide your starting point
 var race = ['White', 'Black', 'Asian', 'Native American', 'Latino'];
     
@@ -28,15 +29,12 @@ var person = {
     socialStatus: socialStatus[decide4],
     education: education[decide5],
     parents: decide6,
-};
+}
 
 //Keeps track of current stage
 var stageCounter = 1;
 
 //Checks click for some buttons
-var pub = 0;
-var pri = 0;
-
 //Dem random life events yo
 function randomLifeEvent(stage) {
     var randomvar = Math.floor((Math.random() * 5) + 1);
@@ -63,14 +61,10 @@ function randomLifeEvent(stage) {
             $('.s' + stage).append('<p>You identified with a person on TV of the same race as you in a positive way. Privliege +1</p>');
             privilegeCounter++;
             break;
+        default:
+            break;
     }
 }
-console.log(person.race);
-console.log(person.gender);
-console.log(person.sexualOrientation);
-console.log(person.socialStatus);
-console.log(person.education);
-console.log(person.parents);
 
 //Actual Game part
 
@@ -104,6 +98,7 @@ if (person.parents === 2){
 
 console.log('Intial Privilege Counter is:');
 console.log(privilegeCounter);
+
 
 //Picks character if Male
 if (person.race === 'White' && person.gender === 'Male') {
@@ -194,21 +189,22 @@ $('.s2').append('<button id="pri" type="button" class="btn btn-primary"><h3>Priv
     $('.s2').append('<h3>Sorry, it seems that your social class is not high enough for private school.');
 }
 
+
 //If public school is picked
 $('#pub').click(function(){
   $('.s' + stageCounter).fadeOut(300, function() {
-    $(this).data('clicked', true);
     stageCounter++;
    $('#current').empty().append('Current Level: ' + (stageCounter-1));
    $('#points').empty().append('Privilege Points: ' + (privilegeCounter));
    $('.s3').fadeIn(300);
    $('.map').empty().append('<img src="images/map/map3_1.png" alt="" width="100%">');
    });
+    $('.s3').append('<p>Looks like you chose to go to public school, or had no other choice. Your privilege points have stayed the same.</p>');
 });
+
 //If private schooling is picked
 $('#pri').click(function(){
   $('.s' + stageCounter).fadeOut(300, function() {
-    $(this).data('clicked', true);
     stageCounter++;
    $('#current').empty().append('Current Level: ' + (stageCounter-1));
    privilegeCounter++;
@@ -216,17 +212,17 @@ $('#pri').click(function(){
    $('.s3').fadeIn(300);
    $('.map').empty().append('<img src="images/map/map3_2.png" alt="" width="100%">');
    });
+    $('.s3').append('<p>Looks like you got to go to private school. Lucky you! You have gained a privilege point.</p>');
 });
 
 //Stage3
 
-if ($('#pub').data('clicked', true)){
-    $('.s3').append('<p>Looks like you chose to go to public school, or had no other choice. Your privilege points have stayed the same.</p>');
-} else {
-    $('.s3').append('<p>Looks like you got to go to private school. Lucky you! You have gained a privilege point.</p>');
-}
+
 $('.s3').append('<button type="button" class="next2 btn btn-primary"><h3>Next</h3></button>');
 
+    
+
+    
 $('.next2').click(function() {
    $('.s' + stageCounter).fadeOut(300, function() {
     stageCounter++;
@@ -271,4 +267,6 @@ $('#col').click(function(){
    $('.s' + stageCounter).fadeIn(300);
    $('.map').empty().append('<img src="images/map/map5_2.png" alt="" width="100%">');
    });
+});
+    
 });
