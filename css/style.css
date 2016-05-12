@@ -1,0 +1,11 @@
+.intro {
+    display: none;
+}
+
+#character {
+    text-align: center;
+}
+
+button {
+            float:right;
+        }

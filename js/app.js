@@ -70,6 +70,52 @@ if (person.parents === 2){
 console.log('Intial Privilege Counter is:');
 console.log(privilegeCounter);
 
+//Picks character if Male
+if (person.race === 'White' && person.gender === 'Male') {
+    $('#character').append('<img src="images/people/male1.png" alt="">');
+}
+
+if (person.race === 'Asian' && person.gender === 'Male') {
+    $('#character').append('<img src="images/people/male1.png" alt="">');
+}
+
+if (person.race === 'Native American' && person.gender === 'Male') {
+    $('#character').append('<img src="images/people/male2.png" alt="">');
+}
+
+if (person.race === 'Latino' && person.gender === 'Male') {
+    $('#character').append('<img src="images/people/male2.png" alt="">');
+}
+
+if (person.race === 'Black' && person.gender === 'Male') {
+    $('#character').append('<img src="images/people/male3.png" alt="">');
+}
+
+//Picks character if female
+
+if (person.race === 'White' && person.gender === 'Female') {
+    $('#character').append('<img src="images/people/female1.png" alt="">');
+}
+
+if (person.race === 'Asian' && person.gender === 'Female') {
+    $('#character').append('<img src="images/people/female1.png" alt="">');
+}
+
+if (person.race === 'Native American' && person.gender === 'Female') {
+    $('#character').append('<img src="images/people/female2.png" alt="">');
+}
+
+if (person.race === 'Latino' && person.gender === 'Female') {
+    $('#character').append('<img src="images/people/female2.png" alt="">');
+}
+
+if (person.race === 'Black' && person.gender === 'Female') {
+    $('#character').append('<img src="images/people/female3.png" alt="">');
+}
+
+
+
+
 //Inputs general information
 $('#race').append('Race: ' + person.race);
 $('#gender').append('Gender: ' + person.gender);
