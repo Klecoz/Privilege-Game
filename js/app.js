@@ -339,6 +339,7 @@ $('.s6').append('<button type="button" class="next4 btn btn-primary"><h3>Next</h
 
 //Stage 7
     $('.s7').append('You are finally at that stage of life where you would want to buy a home, and maybe even start a family.');
+    privilegeCounter++;
     if ((person.race === 'Black') ||(person.race === 'Native American') || (person.race === 'Latino'))
         {
             $('.s7').append('<p>Unfortunally for you, it has been difficult getting a house in a nice neighborhood. You are being redlined. Privilege -1</p>');
@@ -434,5 +435,15 @@ if (person.race === 'Black' && person.gender === 'Female') {
 }
 
 $('.s9').append('<h3>You managed to score: ' + privilegeCounter + ' Privilege Points.</h2>');
+
+    if (privilegeCounter === 0) {
+        $('.s9').append('<p>You are exactly where you started. That seems unfair.</p>');
+    }
+    else if (privilegeCounter > 0) {
+        $('.s9').append('<p>You managed to make it with a bit more Privilege than everyone else!</p>');
+    }
+    else if (privilegeCounter < 0) {
+        $('.s9').append('<p>You do not seem to have much Privilege in this life. Perhaps refresh the page and try again?</p>');
+    }
 
 });

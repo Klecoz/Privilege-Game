@@ -17,7 +17,7 @@ p {
     display: none;
 }
 
-button {
+.btn {
             float:right;
         }
 
@@ -27,4 +27,8 @@ button {
 
 #random {
     color:red;
+}
+
+.modal-content {
+    text-align: center;
 }
