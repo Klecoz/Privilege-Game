@@ -4,8 +4,6 @@ var race = ['White', 'Black', 'Asian', 'Native American', 'Latino'];
 var gender = ['Male', 'Female'];
         
 var sexualOrientation = ['Hetrosexual', 'Bisexual', 'Homosexual'];
-    
-//var status = ['Lower Class', 'Working Class', 'Lower Middle', 'Upper Middle', 'Upper Class'];
 
 var socialStatus = ['Lower Class', 'Working Class', 'Lower Middle', 'Upper Middle', 'Upper Class'];
 
@@ -22,14 +20,6 @@ var decide5= Math.floor((Math.random() * education.length) + 0);
 var decide6 = Math.floor((Math.random() * 2) + 1);
 
 
-
-console.log(decide);
-console.log(decide2);
-console.log(decide3);
-console.log(decide4);
-console.log(decide5);
-console.log(decide6);
-
 //Creates new person based on random and available data.
 var person = {
     race: race[decide],
@@ -40,11 +30,42 @@ var person = {
     parents: decide6,
 };
 
-console.log(socialStatus[1]);
-
 console.log(person.race);
 console.log(person.gender);
 console.log(person.sexualOrientation);
 console.log(person.status);
 console.log(person.education);
 console.log(person.parents);
+
+//Actual Game part
+
+var privilegeCounter = 0;
+
+//Figure out inital privilege based on privilege walk statements.
+if (person.race === 'White') {
+    privilegeCounter++;
+}
+
+if (person.gender === 'Male') { 
+    privilegeCounter++;
+}
+
+if (person.sexualOrientation === 'Hetrosexual') {
+    privilegeCounter++;
+}
+
+if (person.socialStatus === ('Upper Middle' || 'Upper Class')) {
+    privilegeCounter++;
+}
+
+if (person.education === ('Bachelor' || 'Master' || 'Doctor')) {
+    privilegeCounter++;
+}
+
+if (person.parents === 2){
+    privilegeCounter++;
+}
+
+console.log('Privilege Counter is:');
+console.log(privilegeCounter);
+
