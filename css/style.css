@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-.s1, .s2, .map, #current, #points {
+.s1, .s2, .s3, .s4, .s5, .map, #current, #points {
     display: none;
 }
 
@@ -11,6 +11,10 @@ button {
             float:right;
         }
 
-#pri {
+#pri, #col {
     float: left;
+}
+
+#random {
+    color:red;
 }
