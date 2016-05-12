@@ -42,7 +42,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12"></div>
+            <div class="col-md-12">
+                <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    60% Complete
+  </div>
+            </div>
         </div>
         <div class="row">
             <div class="panel panel-default col-md-6 intro">
@@ -58,13 +63,13 @@ Substantial analysis of privilege and specific social groups have been published
     <h2>About This Game:</h2>
     <p>This game is an attempt to describe some situations of privilege in our lives based on academic articles and instances of privilege. It does not attempt to describle all the privileges that a person may or may not have, but highlights certain situations that may come up based on race, color, parents, education, social status, gender, and sexual orientation. It is not meant to insult a certain kind of person or provide a message of hate.</p>
     <p>The game creates random instances of these factors, and proceeds thoughout the 'story' using this data. The choices you make are your own, but know that some choices might not be allowed due to your character's privilege, or lack there of.</p>
-              <button type="button" class="btn btn-success"><h2>Play Privliege Simulator</h2></button>
+              <button type="button" class="play btn btn-success"><h2>Play Privliege Simulator</h2></button>
 
 </div>
         </div>
         
 <div class="row">
-    <div class="col-md-6">
+    <div class="s1 col-md-6">
         <h2>This is your character:</h2>
         <div id="character"></div>
         <h3>This is how you start out:</h3>
@@ -76,22 +81,27 @@ Substantial analysis of privilege and specific social groups have been published
             <li id="education"></li>
             <li id="parents"></li>
         </ul>
+        <button type="button" class="next btn btn-primary"><h3>Next</h3></button>
     </div>
-    <div class="col-md-6">
+    <div class="s2 col-md-6">
+
+    </div>
+    
+    <div class="s3 col-md-6">
+
+    </div>
+    
+    <div class=" map col-md-6">
         <img src="images/map/map1.png" alt="" width="100%">
     </div>
 </div>
 <div class="row">
     <div class="col-md-6">
-        <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-    60% Complete
-  </div>
+        <h2 id="current">Current Level: 0</h2>
 </div>
-    </div>
     
     <div class="col-md-6">
-        <h2 id="points">Privlidge Points: </h2>
+        <h2 id="points">Privilege Points: 0</h2>
     </div>
 </div>
 
@@ -106,7 +116,7 @@ Substantial analysis of privilege and specific social groups have been published
     <script src="js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
 
-
+    </div>
 </body>
 
 </html>

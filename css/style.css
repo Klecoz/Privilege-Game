@@ -1,11 +1,16 @@
-.intro {
-    display: none;
-}
 
 #character {
     text-align: center;
 }
 
+.s1, .s2, .map, #current, #points {
+    display: none;
+}
+
 button {
             float:right;
         }
+
+#pri {
+    float: left;
+}
