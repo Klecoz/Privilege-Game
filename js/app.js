@@ -25,15 +25,16 @@ var person = {
     race: race[decide],
     gender: gender[decide2],
     sexualOrientation: sexualOrientation[decide3],
-    status: socialStatus[decide4],
+    socialStatus: socialStatus[decide4],
     education: education[decide5],
     parents: decide6,
 };
 
+
 console.log(person.race);
 console.log(person.gender);
 console.log(person.sexualOrientation);
-console.log(person.status);
+console.log(person.socialStatus);
 console.log(person.education);
 console.log(person.parents);
 
@@ -66,6 +67,13 @@ if (person.parents === 2){
     privilegeCounter++;
 }
 
-console.log('Privilege Counter is:');
+console.log('Intial Privilege Counter is:');
 console.log(privilegeCounter);
 
+//Inputs general information
+$('#race').append('Race: ' + person.race);
+$('#gender').append('Gender: ' + person.gender);
+$('#sexual').append('Sexual Orientation: ' + person.sexualOrientation);
+$('#social').append('Social Status: ' + person.socialStatus);
+$('#education').append('Education: ' + person.education);
+$('#parents').append(person.parents + ' parent(s)');
