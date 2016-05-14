@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Arsenio Colon">
-    
+
     <title>Privilege Simulator 9000</title>
 
     <!-- Bootstrap Core CSS -->
@@ -16,9 +16,7 @@
 
     <!-- Custom CSS -->
     <style>
-    
-        
-        
+
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -35,7 +33,7 @@
 
     <!-- Page Content -->
     <div class="container">
-    
+
         <div class="row">
             <div class="jumbotron col-md-12">
                 <h1 id="title">Privilege Simulator 9000</h1>
@@ -44,135 +42,137 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-    60% Complete
-  </div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                        60% Complete
+                    </div>
+                </div>
             </div>
+            <div class="row">
+                <div class="panel panel-default col-md-6 intro">
+                    <div class="panel-body">
+                        <h2>What is Privilege?</h2>
+                        <p>According to <a href="https://en.wikipedia.org/wiki/Privilege_(social_inequality)">Wikipedia</a>: Privilege is a special right or advantage available only to a particular person or group of people. The term is commonly used in the context of social inequality, particularly in regard to age, disability, ethnic or racial category, gender, sexual orientation, religion and/or social class. Two common examples would be having access to a higher education and housing. Privilege can also be emotional or psychological, regarding comfort and personal self-confidence, or having a sense of belonging or worth in society. It began as an academic concept, but has since become popular outside of academia. Substantial analysis of privilege and specific social groups have been published and have included a variety of perspectives. Some commentators have addressed limitations in the term, such as its inability to distinguish between concepts of "spared injustice" and "unjust enrichment", and its tendency to conflate disparate groups.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 intro">
+                    <h2>About This Simulation:</h2>
+                    <p>This game is an attempt to describe some situations of privilege in our lives based on academic articles and instances of Privilege. It does not attempt to describle all the privileges that a person may or may not have, but highlights certain situations that may come up based on race, color, parents, education, social status, gender, and sexual orientation. It is not meant to insult a certain kind of person or provide a message of hate.</p>
+                    <p>The simulator creates random instances of these factors, and proceeds thoughout the 'story' using this data. The choices you make are your own, but know that some choices might not be allowed due to your character's privilege, or lack there of.</p>
+                    <p>This is a work in progress, and I plan on refactoring the code, making it cleaner, and improving the interface.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Sources used to create this</button>
+
+                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <a href="https://game-development.zeef.com/david.arcila">David Arcila's Game Dev Resources</a>
+                                <p>Wealth of information.</p>
+                                <a href="kenney.nl/assets"><h3>Kenney 2D Sprites</h3></a>
+                                <p>Used to create the 2D human sprites</p>
+
+                                <a href="http://www.albany.edu/ssw/efc/pdf/Module%205_1_Privilege%20Walk%20Activity.pdf">Privilege Walk Activity via SUNY Albany</a>
+                                <p>Used to provide social situations of Privilege.</p>
+
+                                <a href="http://www.collegeart.org/pdf/diversity/white-privilege-and-male-privilege.pdf">McIntosh, P. (2010). White privilege and male privilege. The Teacher in American Society: A Critical Anthology, 121.</a>
+                                <p>An explaination or privilege.</p>
+
+                                <a href="http://www.imagineeasy.com/blog/10-educational-games-that-teach-kids-about-social-issues/ ">10 Educational Games That Teach Kids About Social Issues</a>
+                                <p>Used to get an idea of what I wanted to do.</p>
+
+                                <h3>Professor Clarke</h3>
+                                <p>I used his notes that he provided in class.</p>
+
+                                <a href="http://www.academia.edu/4889307/The_Sociology_of_Videogames">The Sociology of Videogames.</a>
+                                <p>A general idea of Sociology of Video Games. I didn't add much from it, but it gave me a general understanding.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <button type="button" class="play btn btn-success">
+                        <h2>Play Privilege Simulator</h2></button>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="s1 col-md-6">
+                    <h2>This is your character:</h2>
+                    <div id="character"></div>
+                    <h3>This is how you start out:</h3>
+                    <ul>
+                        <li id="race"></li>
+                        <li id="gender"></li>
+                        <li id="sexual"></li>
+                        <li id="social"></li>
+                        <li id="education"></li>
+                        <li id="parents"></li>
+                    </ul>
+                    <button type="button" class="next btn btn-primary">
+                        <h3>Next</h3></button>
+                </div>
+                <div class="s2 col-md-6">
+
+                </div>
+
+                <div class="s3 col-md-6">
+
+                </div>
+
+                <div class="s4 col-md-6">
+
+                </div>
+
+                <div class="s5 col-md-6">
+
+                </div>
+
+                <div class="s6 col-md-6">
+
+                </div>
+
+                <div class="s7 col-md-6">
+
+                </div>
+
+                <div class="s8 col-md-6">
+
+                </div>
+
+                <div class="s9 col-md-6">
+
+                </div>
+
+                <div class="end col-md-6">
+
+                </div>
+
+                <div class="map col-md-6">
+                    <img src="images/map/map1.png" alt="" width="100%">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 id="current">Current Level: 0</h2>
+                </div>
+
+                <div class="col-md-6">
+                    <h2 id="points">Privilege Points: 0</h2>
+                </div>
+            </div>
+
+
         </div>
-        <div class="row">
-            <div class="panel panel-default col-md-6 intro">
-  <div class="panel-body">
-    <h2>What is Privilege?</h2>
-    <p>According to <a href="https://en.wikipedia.org/wiki/Privilege_(social_inequality)">Wikipedia</a>: Privilege is a special right or advantage available only to a particular person or group of people. The term is commonly used in the context of social inequality, particularly in regard to age, disability, ethnic or racial category, gender, sexual orientation, religion and/or social class. Two common examples would be having access to a higher education and housing. Privilege can also be emotional or psychological, regarding comfort and personal self-confidence, or having a sense of belonging or worth in society. It began as an academic concept, but has since become popular outside of academia.
+        <!-- /.container -->
 
-Substantial analysis of privilege and specific social groups have been published and have included a variety of perspectives. Some commentators have addressed limitations in the term, such as its inability to distinguish between concepts of "spared injustice" and "unjust enrichment", and its tendency to conflate disparate groups.</p>
-  </div>
-</div>
+        <!-- jQuery Version 1.11.1 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-          <div class="col-md-6 intro">
-    <h2>About This Simulation:</h2>
-    <p>This game is an attempt to describe some situations of privilege in our lives based on academic articles and instances of Privilege. It does not attempt to describle all the privileges that a person may or may not have, but highlights certain situations that may come up based on race, color, parents, education, social status, gender, and sexual orientation. It is not meant to insult a certain kind of person or provide a message of hate.</p>
-    <p>The simulator creates random instances of these factors, and proceeds thoughout the 'story' using this data. The choices you make are your own, but know that some choices might not be allowed due to your character's privilege, or lack there of.</p>
-    <p>This is a work in progress, and I plan on refactoring the code, making it cleaner, and improving the interface.</p>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Sources used to create this</button>
-
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <a href="https://game-development.zeef.com/david.arcila">David Arcila's Game Dev Resources</a>
-      <p>Wealth of information.</p>
-      <a href="kenney.nl/assets"><h3>Kenney 2D Sprites</h3></a>
-      <p>Used to create the 2D human sprites</p>
-      
-      <a href="http://www.albany.edu/ssw/efc/pdf/Module%205_1_Privilege%20Walk%20Activity.pdf">Privilege Walk Activity via SUNY Albany</a>
-      <p>Used to provide social situations of Privilege.</p>
-      
-      <a href="http://www.collegeart.org/pdf/diversity/white-privilege-and-male-privilege.pdf">McIntosh, P. (2010). White privilege and male privilege. The Teacher in American Society: A Critical Anthology, 121.</a>
-      <p>An explaination or privilege.</p>
-      
-      <a href="http://www.imagineeasy.com/blog/10-educational-games-that-teach-kids-about-social-issues/ ">10 Educational Games That Teach Kids About Social Issues</a>
-      <p>Used to get an idea of what I wanted to do.</p>
-      
-      <h3>Professor Clarke</h3>
-      <p>I used his notes that he provided in class.</p>
-      
-      <a href="http://www.academia.edu/4889307/The_Sociology_of_Videogames">The Sociology of Videogames.</a>
-      <p>A general idea of Sociology of Video Games. I didn't add much from it, but it gave me a general understanding.</p>
-      
-    </div>
-  </div>
-</div>
-             <br><br><br>
-    <button type="button" class="play btn btn-success"><h2>Play Privilege Simulator</h2></button>
-
-</div>
-        </div>
-        
-<div class="row">
-    <div class="s1 col-md-6">
-        <h2>This is your character:</h2>
-        <div id="character"></div>
-        <h3>This is how you start out:</h3>
-        <ul>
-            <li id="race"></li>
-            <li id="gender"></li>
-            <li id="sexual"></li>
-            <li id="social"></li>
-            <li id="education"></li>
-            <li id="parents"></li>
-        </ul>
-        <button type="button" class="next btn btn-primary"><h3>Next</h3></button>
-    </div>
-    <div class="s2 col-md-6">
-
-    </div>
-    
-    <div class="s3 col-md-6">
-
-    </div>
-    
-    <div class="s4 col-md-6">
-
-    </div>
-    
-    <div class="s5 col-md-6">
-
-    </div>
-    
-    <div class="s6 col-md-6">
-
-    </div>
-    
-    <div class="s7 col-md-6">
-
-    </div>
-    
-    <div class="s8 col-md-6">
-
-    </div>
-    
-    <div class="s9 col-md-6">
-
-    </div>
-    
-    <div class="end col-md-6">
-        
-    </div>
-    
-    <div class="map col-md-6">
-        <img src="images/map/map1.png" alt="" width="100%">
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-6">
-        <h2 id="current">Current Level: 0</h2>
-</div>
-    
-    <div class="col-md-6">
-        <h2 id="points">Privilege Points: 0</h2>
-    </div>
-</div>
-
-
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery Version 1.11.1 -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/app.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
 
     </div>
 </body>
